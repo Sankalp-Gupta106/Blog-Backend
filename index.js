@@ -18,7 +18,7 @@ app.use(cors({
     origin: 'http://localhost:5173'
 }))
 
-mongoose.connect("mongodb://127.0.0.1:27017/firstDB").then(() => app.listen(port, () => console.log("server started at port " + port)))
+mongoose.connect("mongodb://localhost:27017/firstDB").then(() => app.listen(port, () => console.log("server started at port " + port)))
 
 //SCHEMA
 
