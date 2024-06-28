@@ -15,10 +15,10 @@ const app = express()
 const port = 4000;
 
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: '*'
 }))
 
-mongoose.connect("mongodb://localhost:27017/firstDB").then(() => app.listen(port, () => console.log("server started at port " + port)))
+mongoose.connect("mongodb+srv://Mongodb_user:sankalp@cluster0.tc8vtil.mongodb.net/blogs?retryWrites=true&w=majority&appName=Cluster0").then(() => app.listen(port, () => console.log("server started at port " + port)))
 
 //SCHEMA
 
