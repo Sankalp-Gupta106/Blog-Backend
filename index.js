@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import multer from "multer"
 import path from 'path'
 import { fileURLToPath } from 'url';
+import 'dotenv/config'
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -14,11 +15,14 @@ const __dirname = path.dirname(__filename);
 const app = express()
 const port = 4000;
 
+const username = process.env.MONGO_USERNAME
+const password = process.env.MONGO_PASSWORD
+
 app.use(cors({
     origin: '*'
 }))
 
-mongoose.connect("mongodb+srv://Mongodb_user:sankalp@cluster0.tc8vtil.mongodb.net/blogs?retryWrites=true&w=majority&appName=Cluster0").then(() => app.listen(port, () => console.log("server started at port " + port)))
+mongoose.connect("mongodb+srv://"+username+":"+password+"@cluster0.tc8vtil.mongodb.net/blogs?retryWrites=true&w=majority&appName=Cluster0").then(() => app.listen(port, () => console.log("server started at port " + port)))
 
 //SCHEMA
 
